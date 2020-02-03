@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
 
+const listItemStyle = {
+  color: "#333",
+  listStyle: "none",
+  textAlign: "left",
+  display: "flex",
+  flexDirection: "row",
+  margin: "8px"
+};
+
 const data = {
   labels: ['Makeup', 'Skincare', 'Hair', 'Fragrance'],
   datasets: [
@@ -68,6 +77,10 @@ const data = {
 class Bar1Example extends Component {
 
   render() {
+    var legend = [{ label: 'Makeup', backgroundColor: "rgba(99,255,132)" },
+    { label: 'Skincare', backgroundColor: "rgba(99,99,99)" },
+    { label: 'Hair', backgroundColor: "rgba(255,99,132)" },
+    { label: 'Fragrance', backgroundColor: "rgba(99,99,255)" }];
     return (
       <div>
         <h2>Annual brand share point increase</h2>
@@ -103,7 +116,7 @@ class Bar1Example extends Component {
               }
             },
             legend: {
-              display: true,
+              display: false,
               position: 'right',
               // labels: {
               //   fontColor: 'rgb(255, 99, 132)'
@@ -139,8 +152,9 @@ class Bar1Example extends Component {
                 }
               }],
               xAxes: [{
+                barPercentage: 0.8,
                 categoryPercentage: 0.5,
-                barThickness: 15,
+                // barThickness: 15,
                 gridLines: {
                   display: false,
                 }
@@ -148,6 +162,27 @@ class Bar1Example extends Component {
             }
           }}
         />
+        <div>
+          <ul className="mt-8">
+            {legend.length &&
+              legend.map(item => {
+                return (
+                  <li key={item.label} style={listItemStyle}>
+                    <div
+                      style={{
+                        marginRight: "8px",
+                        width: "12px",
+                        height: "12px",
+                        borderRadius: "2px",
+                        backgroundColor: item.backgroundColor
+                      }}
+                    />
+                    {item.label}
+                  </li>
+                );
+              })}
+          </ul>
+        </div>
       </div>
     );
   }

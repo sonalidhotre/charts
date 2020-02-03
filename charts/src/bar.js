@@ -85,19 +85,19 @@ class BarExample extends Component {
 
   render() {
     var legend = [{
-      label: "Sub Category 1 FY19",
+      label: "FY19",
       backgroundColor: "rgba(99,255,132)",
       data: [59, 80, 81, 56],
       stack: 1
     },
     {
-      label: "Sub Category 1 FY20",
+      label: "FY20",
       backgroundColor: "rgba(255,99,132)",
       data: [59, 80, 81, 56],
       stack: 1
     },
     {
-      label: "Sub Category 1 FY21",
+      label: "FY21",
       backgroundColor: "rgba(99,99,132)",
       data: [59, 80, 81, 56],
       stack: 1
@@ -147,8 +147,9 @@ class BarExample extends Component {
                   stacked: true
                 }],
                 xAxes: [{
-                  categoryPercentage: 0.7,
-                  barThickness: 15,
+                  barPercentage: 0.5,
+                  categoryPercentage: 0.5,
+                  // barThickness: 15,
                   gridLines: {
                     display: false,
                   }

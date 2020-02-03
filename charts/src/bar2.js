@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
 
+const listItemStyle = {
+  color: "#333",
+  listStyle: "none",
+  textAlign: "left",
+  display: "flex",
+  flexDirection: "row",
+  margin: "8px"
+};
+
 const data = {
   labels: ['2019', '2020', '2021', '2022'],
   datasets: [
@@ -67,6 +76,10 @@ const data = {
 
 class Bar2Example extends Component {
   render() {
+    var legend = [{ label: '2019', backgroundColor: "rgba(99,255,132)" },
+    { label: '2020', backgroundColor: "rgba(99,99,99)" },
+    { label: '2021', backgroundColor: "rgba(255,99,132)" },
+    { label: '2022', backgroundColor: "rgba(99,99,255)" }];
     return (
       <div>
         <h2>% Market Growth</h2>
@@ -129,7 +142,7 @@ class Bar2Example extends Component {
                     style += '; border-width: 2px';
                     var span = '<span style="' + style + '"></span>';
                     innerHtml += '<tr><td>' + span + body[0].substring(0, body[0].indexOf(":")) + '</td></tr>';
-                    innerHtml += '<tr><td>' + span + "Growth: " + body[0].substring(body[0].indexOf(":")+2, body[0].length) + '</td></tr>';
+                    innerHtml += '<tr><td>' + span + "Growth: " + body[0].substring(body[0].indexOf(":") + 2, body[0].length) + '</td></tr>';
                   });
                   innerHtml += '</tbody>';
 
@@ -172,7 +185,7 @@ class Bar2Example extends Component {
             //   }
             // },
             legend: {
-              display: true,
+              display: false,
               position: 'right',
               // labels: {
               //   fontColor: 'rgb(255, 99, 132)'
@@ -201,8 +214,8 @@ class Bar2Example extends Component {
                 stacked: true,
               }],
               xAxes: [{
+                barPercentage: 0.7,
                 categoryPercentage: 0.5,
-                barThickness: 15,
                 barDatasetSpacing: 0,
                 gridLines: {
                   display: false,
@@ -211,6 +224,27 @@ class Bar2Example extends Component {
             }
           }}
         />
+        <div>
+          <ul className="mt-8">
+            {legend.length &&
+              legend.map(item => {
+                return (
+                  <li key={item.label} style={listItemStyle}>
+                    <div
+                      style={{
+                        marginRight: "8px",
+                        width: "12px",
+                        height: "12px",
+                        borderRadius: "2px",
+                        backgroundColor: item.backgroundColor
+                      }}
+                    />
+                    {item.label}
+                  </li>
+                );
+              })}
+          </ul>
+        </div>
       </div>
     );
   }
