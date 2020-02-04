@@ -4,12 +4,18 @@ import { Bar } from 'react-chartjs-2';
 require('./roundedCharts.js')
 
 const listItemStyle = {
-  color: "#333",
+  color: "#646f79",
   listStyle: "none",
   textAlign: "left",
+  fontSize: "12px",
   display: "flex",
   flexDirection: "row",
-  margin: "8px"
+  margin: "8px",
+  fontWeight: "300",
+  fontStretch: "normal",
+  fontStyle: "normal",
+  lineHeight: "1.5",
+  letterSpacing: "normal"
 };
 
 const data = {
@@ -93,7 +99,7 @@ class BarExample extends Component {
                   }
                 },
                 title: {
-                  display: true,
+                  display: false,
                   text: 'Custom Chart Title',
                   position: 'top',
                   fontStyle: 'normal'

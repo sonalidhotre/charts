@@ -4,12 +4,18 @@ import { Bar } from 'react-chartjs-2';
 require('./roundedCharts.js')
 
 const listItemStyle = {
-  color: "#333",
+  color: "#646f79",
   listStyle: "none",
   textAlign: "left",
+  fontSize: "12px",
   display: "flex",
   flexDirection: "row",
-  margin: "8px"
+  margin: "8px",
+  fontWeight: "300",
+  fontStretch: "normal",
+  fontStyle: "normal",
+  lineHeight: "1.5",
+  letterSpacing: "normal"
 };
 
 const data = {
@@ -126,13 +132,15 @@ class Bar1Example extends Component {
                     tooltipEl.style.left = position.left + window.pageXOffset + tooltipModel.caretX + 'px';
                     tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY + 'px';
                     tooltipEl.style.fontFamily = tooltipModel._bodyFontFamily;
-                    tooltipEl.style.fontSize = tooltipModel.bodyFontSize + 'px';
+                    tooltipEl.style.fontSize = '10px';
                     tooltipEl.style.fontStyle = tooltipModel._bodyFontStyle;
                     tooltipEl.style.padding = tooltipModel.yPadding + 'px ' + tooltipModel.xPadding + 'px';
                     tooltipEl.style.pointerEvents = 'none';
                     tooltipEl.style.boxShadow = '1px 1px 8px -2px rgba(0, 0, 0, 0.5)';
                     tooltipEl.style.borderRadius = '3px';
                     tooltipEl.style.backgroundColor = '#ffffff';
+                    tooltipEl.style.textAlign="center";
+                    tooltipEl.style.color="#646f79";
                   }
                 },
                 // tooltips: {
