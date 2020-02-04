@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
 
+require ('./roundedCharts.js')
+
 const listItemStyle = {
   color: "#333",
   listStyle: "none",
@@ -88,6 +90,7 @@ class Bar2Example extends Component {
           width={100}
           height={50}
           options={{
+            cornerRadius: 8,
             tooltips: {
               // Disable the on-canvas tooltip
               enabled: false,

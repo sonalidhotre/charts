@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
 
+require ('./roundedCharts.js')
+
 const listItemStyle = {
   color: "#333",
   listStyle: "none",
@@ -113,6 +115,7 @@ class BarExample extends Component {
             // ref={this.chartReference}
             ref="chart"
             options={{
+              cornerRadius: 8,
               legend: {
                 display: false,
                 position: 'right',
