@@ -52,8 +52,8 @@ class Bar1Example extends Component {
     return (
       <div>
         <h2>Annual brand share point increase</h2>
-        <div>
-          <div>
+        <div style={{ display: "flex" }}>
+          <div style={{ width: "75%" }}>
             <Bar
               data={data}
               width={100}
@@ -238,8 +238,9 @@ class Bar1Example extends Component {
               }}
             />
           </div>
-          <div>
-            <ul className="mt-8">
+          <div style={{ width: "25%", position: "relative" }}>
+            {/* custom lagend */}
+            <ul className="mt-8" style={{ position: "absolute", bottom: 0 }}>
               {legend.length &&
                 legend.map(item => {
                   return (
